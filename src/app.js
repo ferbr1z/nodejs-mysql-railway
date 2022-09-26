@@ -6,7 +6,9 @@ const app = express();
 
 app.get('/', async (req,res)=>{
     const [users] = await pool.query('SELECT * FROM users');
-    res.json(users);
+    res.json({
+        message: "Hola mundo",
+        users});
 })
 
 app.get('/ping', async (req,res)=>{
